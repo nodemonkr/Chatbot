@@ -18,9 +18,9 @@ const Header = () => {
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
       
-        <Nav.Link href="#home">Main</Nav.Link>
-        <Nav.Link href="#link">About</Nav.Link>
-        <Nav.Link href="#link">Chatting</Nav.Link>
+        <Nav.Link href="#home">HOME</Nav.Link>
+        <Nav.Link href="#link">CHATBOT</Nav.Link>
+        <Nav.Link href="#link">TEAM</Nav.Link>
         <Nav.Link href="#link">Q&A</Nav.Link>
      
       
