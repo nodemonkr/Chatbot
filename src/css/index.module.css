@@ -1,0 +1,78 @@
+.body {
+  display: "flex";
+  justify-content: "center";
+  align-items: "center";
+  height: "90vh";
+  margin: 0;
+}
+.container {
+  display: grid;
+  grid-gap: 10px;
+  height: 100vh;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "image text"
+    "image text";
+}
+.container div {
+  padding: 20px;
+}
+.logo {
+  margin-top: 60px;
+}
+.image {
+  grid-area: image;
+}
+.text {
+  grid-area: text;
+}
+.small_font {
+  font-size: 1rem;
+  color: #84888d;
+}
+.bold_font {
+  font-size: 2rem;
+  font-weight: bold;
+}
+.chatBot_category {
+  margin: 20px;
+}
+button {
+  background: #425e7f;
+  color: #fff;
+  border: none;
+  margin-right: 20px;
+  position: relative;
+  height: 60px;
+  font-size: 1.6em;
+  padding: 0 2em;
+  cursor: pointer;
+  transition: 800ms ease all;
+  outline: none;
+}
+button:hover {
+  background: #fff;
+  color: #425e7f;
+}
+button:before,
+button:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 2px;
+  width: 0;
+  background: #cad0d8;
+  transition: 400ms ease all;
+}
+button:after {
+  right: inherit;
+  top: inherit;
+  left: 0;
+  bottom: 0;
+}
+button:hover:before,
+button:hover:after {
+  width: 100%;
+  transition: 800ms ease all;
+}
