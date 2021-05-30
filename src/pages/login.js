@@ -1,7 +1,12 @@
 import React from 'react'
 
+
+
+
 const Login = () => {
+
     return (
+        
         <div 
             style={{
                 display:'flex', 
@@ -12,7 +17,9 @@ const Login = () => {
         >
             <h1>login</h1>
         </div>
+       
     )
 }
+
 
 export default Login

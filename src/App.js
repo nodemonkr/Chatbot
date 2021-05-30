@@ -8,6 +8,7 @@ import Team from './pages/team';
 import SignUp from './pages/signUp';
 import Login from './pages/login';
 
+
 function App() {
   return (
 

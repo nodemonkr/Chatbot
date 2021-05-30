@@ -1,0 +1,35 @@
+
+.msg_card_body {
+  height: 700px;
+  border-radius: 2px;
+  overflow-y: auto;
+}
+.msg_cotainer_send {
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-right: 10px;
+  border-radius: 2px;
+  background-color: #a4a9bc ;
+  padding: 10px;
+  position: relative;
+  width: 150px;
+}
+.msg_cotainer {
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 10px;
+  border-radius: 2px;
+  background-color: #425e7f;
+  padding: 10px;
+  position: relative;
+  width: 150px;
+}
+.align-items-center {
+    margin-top: 50px;
+    align-items: center !important;
+    text-align: center;
+  
+}
+strong{
+    margin-right: 270px;
+}

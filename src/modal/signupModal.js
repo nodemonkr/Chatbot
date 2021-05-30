@@ -1,52 +1,49 @@
 import React from 'react'
-import {Modal,Button,Form} from 'react-bootstrap'
+import {Modal,Form} from 'react-bootstrap'
+import "../css/login.css"
+
+
+
 
 const signupModal = ({show,onHide}) => {
     return (
         <Modal
         show={show}
         onHide={onHide}
-        size="lg"
-        aria-labelledby="contained-modal-title-vcenter"
-        centered
+        
       >
-        <Modal.Header closeButton>
-          <Modal.Title id="contained-modal-title-vcenter">
-            회원가입
-          </Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
+        
+         <div className="LogoWrapper">
+         <a>Himetting</a>
+         </div>
+          
+        
+        <strong className="logintop">로그인</strong>
         <Form>
-        <Form.Group className="mb-3" controlId="formBasicusername">
-    <Form.Label>username</Form.Label>
-    <Form.Control type="text" placeholder="text" />
-  </Form.Group>
-
-  <Form.Group className="mb-3" controlId="formBasicEmail">
-    <Form.Label>Email address</Form.Label>
-    <Form.Control type="email" placeholder="Enter email" />
-    <Form.Text className="text-muted">
-      We'll never share your email with anyone else.
-    </Form.Text>
-  </Form.Group>
-
-  <Form.Group className="mb-3" controlId="formBasicPassword">
-    <Form.Label>Password</Form.Label>
-    <Form.Control type="password" placeholder="Password" />
-  </Form.Group>
-
-  <Form.Group className="mb-3" controlId="formBasicCheckbox">
-    <Form.Check type="checkbox" label="Check me out" />
-  </Form.Group>
   
-</Form>
-        </Modal.Body>
-        <Modal.Footer>
-        <Button variant="primary" type="submit">
+    <p class="login">ID</p>
+    <input className="form-control" type="ID" placeholder="ID" />
+
+  
+
+ 
+    <p class="login">Password</p>
+    <input className="form-control" type="password" placeholder="Password" />
+  <br/>
+  
+  <button className="loginbutton" type="submit" value="로그인">
     Submit
-  </Button>
-          <Button onClick={onHide}>Close</Button>
-        </Modal.Footer>
+  </button>
+</Form>
+<hr></hr>
+<div className="kakao"><strong className="tt">또는</strong>
+        <br>
+        </br>
+        <a  href=""><img height="70px;" width="300px;" src="//k.kakaocdn.net/14/dn/btqCn0WEmI3/nijroPfbpCa4at5EIsjyf0/o.jpg" /> </a>
+        <br>
+        </br>
+        </div> 
+      
       </Modal>
     )
 }
