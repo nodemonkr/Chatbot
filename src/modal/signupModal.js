@@ -22,23 +22,24 @@ const signupModal = ({show,onHide}) => {
         <form>
   
     <p class="login">ID</p>
-    <input className="form-control" type="ID" placeholder="ID" />
+    <input className="loginform" type="ID" placeholder="ID" />
 
   
 
  
     <p class="login">Password</p>
-    <input className="form-control" type="password" placeholder="Password" />
+    <input className="loginform" type="password" placeholder="Password" />
   <br/>
   
   <button className="loginbutton" type="submit" value="로그인">
-    Submit
+    로그인
   </button>
 </form>
 <hr></hr>
-<div className="kakao"><strong className="tt">또는</strong>
+<div className="kakao"><strong className="tt">또는</strong><br></br>
         <br>
         </br>
+       
         <a  href=""><img height="70px;" width="300px;" src="//k.kakaocdn.net/14/dn/btqCn0WEmI3/nijroPfbpCa4at5EIsjyf0/o.jpg" /> </a>
         <br>
         </br>

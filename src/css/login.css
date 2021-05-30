@@ -18,13 +18,15 @@ button{
         
     }
     .logintop{
-        margin-left: 20px;
+        margin-left: 100px;
+        margin-right: 100px;
         font-size: 30px;
         margin-top:10px;
+        text-align: center;
     }
     .login{
         margin-left: 20px;
-        margin-bottom: 15px;
+        margin-bottom: 10px;
         margin-top: 15px;
        
         
@@ -38,24 +40,7 @@ button{
         margin-left: 20px;
     }
     
-    
-    .form-control {
-        margin-left: 20px;
-        display: block;
-        width: 70%;
-        padding: 0.375rem 0.75rem;
-        font-size: 1rem;
-        font-weight: 400;
-        line-height: 1.5;
-        color: #444;
-        background-color: #fff;
-        background-clip: padding-box;
-        border: 1px solid #cbc8d0;
-        -webkit-appearance: none;
-        appearance: none;
-        border-radius: 0;
-        transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-    }
+  
 
     .kakao{
         text-align: center;
@@ -66,5 +51,30 @@ button{
         margin-right: auto;
     }
     .loginbutton {
-        margin-left: 340px;
+        width: 300px;
+        margin-left: 100px;
+        margin-right: 100px;
+        margin-bottom: 20px;
+    }
+
+    .loginsmall{
+        margin-left: 20px;
+    }
+    
+    .loginform{
+    display: block;
+    padding: 0.375rem 0.75rem;
+    margin-left: 20px;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #444;
+    width: 90%;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #cbc8d0;
+    -webkit-appearance: none;
+    appearance: none;
+    border-radius: 0;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
     }
