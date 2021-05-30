@@ -1,14 +1,20 @@
 import React,{useState} from 'react'
 import {Nav, NavLink, Bars, NavMenu, NavBtn, NavBtnLink} from './NavbarElements';
 import  SignUpModal from '../../modal/signupModal'
+import  SignModal from '../../modal/signModal'
 
 const Navbar = () => {
     const [signUpModalOn, setSignUpModalOn] = useState(false);
+    const [signModalOn, setSignModalOn] = useState(false);
     return (
         <>
       <SignUpModal
         show={signUpModalOn}
         onHide={() => setSignUpModalOn(false)}
+      />
+      <SignModal
+        show={signModalOn}
+        onHide={() => setSignModalOn(false)}
       />
             <Nav>
                 <NavLink to='/'>
@@ -28,7 +34,7 @@ const Navbar = () => {
                    
                 </NavMenu>
                 <NavBtn>
-                    <NavBtnLink to='/SignUp'>Sign Up </NavBtnLink>    
+                    <NavBtnLink onClick={() => setSignModalOn(true)} to='/SignUp'>Sign Up </NavBtnLink>    
                    <NavBtnLink onClick={() => setSignUpModalOn(true)} to='/Login'>Login</NavBtnLink>
                 </NavBtn>
             </Nav>
