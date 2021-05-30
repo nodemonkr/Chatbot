@@ -55,6 +55,9 @@ button{
         margin-left: 100px;
         margin-right: 100px;
         margin-bottom: 20px;
+        background-color: #425e7f;
+        height: 50px;
+        color: white;
     }
 
     .loginsmall{
@@ -78,3 +81,5 @@ button{
     border-radius: 0;
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
     }
+
+    
