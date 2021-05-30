@@ -1,11 +1,6 @@
-.body {
-  display: "flex";
-  justify-content: "center";
-  align-items: "center";
-  height: "90vh";
-  margin: 0;
-}
-.container {
+.home_container {
+  margin-top: 60px;
+  padding: 20px;
   display: grid;
   grid-gap: 10px;
   height: 100vh;
@@ -14,17 +9,20 @@
     "image text"
     "image text";
 }
-.container div {
+.home_container div {
   padding: 20px;
 }
-.logo {
+.home_logo {
   margin-top: 60px;
 }
-.image {
+.home_image {
   grid-area: image;
 }
-.text {
+.home_text {
   grid-area: text;
+}
+.Himeeting_about {
+  margin: 20px;
 }
 .small_font {
   font-size: 1rem;
@@ -36,26 +34,23 @@
 }
 .chatBot_category {
   margin: 20px;
-}
-button {
   background: #425e7f;
   color: #fff;
   border: none;
   margin-right: 20px;
   position: relative;
   height: 60px;
-  font-size: 1.6em;
   padding: 0 2em;
   cursor: pointer;
   transition: 800ms ease all;
   outline: none;
 }
-button:hover {
+.chatBot_category:hover {
   background: #fff;
   color: #425e7f;
 }
-button:before,
-button:after {
+.chatBot_category:before,
+.chatBot_category:after {
   content: "";
   position: absolute;
   top: 0;
@@ -65,14 +60,14 @@ button:after {
   background: #cad0d8;
   transition: 400ms ease all;
 }
-button:after {
+.chatBot_category:after {
   right: inherit;
   top: inherit;
   left: 0;
   bottom: 0;
 }
-button:hover:before,
-button:hover:after {
+.chatBot_category:hover:before,
+.chatBot_category:hover:after {
   width: 100%;
   transition: 800ms ease all;
 }

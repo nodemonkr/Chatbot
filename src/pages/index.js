@@ -4,15 +4,13 @@ import styles from "../css/index.module.css"
 
 const Home = () => {
     return (
-        <div className={styles.container}>
-            <button>Hover me !</button>
-            <h1>Home</h1>
-            <div className={styles.image}>
+        <div className={styles.home_container}>
+            <div className={styles.home_image}>
                 이미지
             </div>
-            <div className={styles.text}>
+            <div className={styles.home_text}>
                 <div className={styles.Himeeting_about}>
-                    <div className={styles.logo}><img src="/images/himeeting_logo1.png" weight="50px" height="50px" /></div>
+                    <div className={styles.home_logo}><img src="/images/himeeting_logo1.png" weight="50px" height="50px" /></div>
                     <div className={styles.bold_font}>하이미팅과 면접 준비 같이해요!   </div>
                     <div className={styles.small_font}>
                         면접을 준비하는 과정에서 가장 중요한 부분은 무엇일까요?<br/>

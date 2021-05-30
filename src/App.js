@@ -12,15 +12,14 @@ function App() {
   return (
 
     <Router>
-      <Navbar/>
-      <Switch>
-        <Route path='/' exact component={Home} />
-        <Route path='/chatbot' component={Chatbot} />
-        <Route path='/team' component={Team} />
-        <Route path='/signUp' component={SignUp} />
-        <Route path='/login' component={Login} />
-
-      </Switch>
+        <Navbar/>
+        <Switch className="header">
+          <Route path='/' exact component={Home} />
+          <Route path='/chatbot' component={Chatbot} />
+          <Route path='/team' component={Team} />
+          <Route path='/signUp' component={SignUp} />
+          <Route path='/login' component={Login} />
+        </Switch>
     </Router>
   );
 }

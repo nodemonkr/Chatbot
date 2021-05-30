@@ -1,16 +1,17 @@
-import React from 'react'
-import {Nav, NavLink, Bars, NavMenu, NavBtn, NavBtnLink} from './NavbarElements';
-
+import React, { useState } from 'react'
+import {Nav, NavLink, NavMenu, NavBtn, NavBtnLink} from './NavbarElements';
 
 const Navbar = () => {
+    const [menu, setmenu] = useState(false)     // reactHooks
+
     return (
         <>
             <Nav>
                 <NavLink to='/'>
                     <img src='images/himeeting_logo3.png' alt='Himeeting' width="200" height="60" />   
-                </NavLink>    
-                <Bars />
-                <NavMenu>
+                </NavLink>   
+                
+                <NavMenu menu={menu}>
                     <NavLink to='/' activeStyle>
                         Home
                     </NavLink>
@@ -21,11 +22,11 @@ const Navbar = () => {
                         Team
                     </NavLink>
                    
+                    <NavBtn>
+                        <NavBtnLink to='/SignUp'>Sign Up </NavBtnLink>    
+                        <NavBtnLink to='/Login'>Login</NavBtnLink>    
+                    </NavBtn>
                 </NavMenu>
-                <NavBtn>
-                    <NavBtnLink to='/SignUp'>Sign Up </NavBtnLink>    
-                    <NavBtnLink to='/Login'>Login</NavBtnLink>    
-                </NavBtn>
             </Nav>
         </>
     );
