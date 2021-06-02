@@ -30,6 +30,7 @@ export const NavLink = styled(Link)`
   padding: 0 1rem;
   height: 100%;
   font-size: 1.2em;
+  letter-spacing: 0px;
   cursor: pointer;
   &.active {
     color: #242e41;
@@ -70,6 +71,7 @@ export const NavMenu = styled.div`
     left: 0;
     right: 0; 
     display: flex;
+    margin : 0;
   }
   
 `;
@@ -80,12 +82,13 @@ export const NavBtn = styled.nav`
   margin-right: 60px;
 `;
 
-/* Login */
+/* Sign Up, Login */
 export const NavBtnLink = styled(Link)`
   color: #a4a9bc;
   border-radius : 5px;
   margin-left: 10px;
   position: relative;
+  letter-spacing: 0px;
   height: 35px;
   font-size: 0.8em;
   padding: 0.6em 1em;

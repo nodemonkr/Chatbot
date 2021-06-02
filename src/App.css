@@ -1,6 +1,3 @@
-/* 폰트 적용 */
-@import url("https://fonts.googleapis.com/css2?family=Sora&display=swap");
-
 .App {
   text-align: center;
 }
@@ -42,8 +39,11 @@
 
 /* 공통 css 적용 */
 * {
-  font-family: "Sora", sans-serif;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+body {
+  font-family: "Noto Sans KR", sans-serif;
 }
