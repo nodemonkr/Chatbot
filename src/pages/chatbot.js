@@ -1,9 +1,26 @@
-import React from 'react'
+import React,{useState} from 'react'
 import "../css/chat.css"
-
+import {API} from "../api/api"
 
 
 const Chatbot = () => {
+
+    const [contents, setContents] = useState({haibot:"",me:""})
+    const [message, setMessage] = useState("")
+
+    
+    const chatBotCall = () =>{
+      API.post("/chatbot",{
+        message:message
+      }).then(res =>{
+        setContents({...contents, res})
+      }).catch(err =>{
+        console.log(err)
+      })
+      setMessage('')
+    }
+
+
     return (
        <div>
 
@@ -32,14 +49,14 @@ const Chatbot = () => {
               <input
                 className="form-control type_msg"
                 placeholder="메세지를 입력해주세요"
-                // value={}
-                // onChange={}
+                value={message}
+                onChange={(e)=>setMessage(e.target.value)}
                 // onKeyPress={}
               />
               <div className="input-group-append">
                 <span
                   className="input-group-text send_btn "
-                  // onClick={}
+                  onClick={chatBotCall}
                 >
                   send
                 </span>
