@@ -20,8 +20,8 @@ const Navbar = () => {
       />
             <Nav>
                 <NavLink to='/'>
-                    <img src='images/himeeting_logo3.png' alt='Himeeting' width="200" height="60" />   
-                </NavLink>   
+                    <img src='images/himeeting_logo3.png' alt="Himeeting" width="200" height="50" />   
+                </NavLink>
                 
                 <NavMenu menu={menu}>
                     <NavLink to='/' activeStyle>

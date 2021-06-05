@@ -1,6 +1,6 @@
 import React from 'react'
 import {Modal} from 'react-bootstrap'
-import "../css/login.css"
+import styles from "../css/login.module.css"
 
 
 
@@ -13,30 +13,30 @@ const signupModal = ({show,onHide}) => {
         
       >
         
-         <div className="LogoWrapper">
+         <div className={styles.LogoWrapper}>
          <a>Himetting</a>
          </div>
           
         
-        <strong className="logintop">로그인</strong>
+        <strong className={styles.logintop}>로그인</strong>
         <form>
   
-    <p class="login">ID</p>
-    <input className="loginform" type="ID" placeholder="ID" />
+    <p class={styles.login}>ID</p>
+    <input className={styles.loginform} type="ID" placeholder="ID" />
 
   
 
  
-    <p class="login">Password</p>
-    <input className="loginform" type="password" placeholder="Password" />
+    <p class={styles.login}>Password</p>
+    <input className={styles.loginform} type="password" placeholder="Password" />
   <br/>
   
-  <button className="loginbutton" type="submit" value="로그인">
+  <button className={styles.loginbutton} type="submit" value="로그인">
     로그인
   </button>
 </form>
 <hr></hr>
-<div className="kakao"><strong className="tt">또는</strong><br></br>
+<div className={styles.kakao}><strong className="tt">또는</strong><br></br>
         <br>
         </br>
        
