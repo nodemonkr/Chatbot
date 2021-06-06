@@ -11,10 +11,6 @@
     padding: 0.5rem calc((100vw - 1000px) / 2);
     border-bottom: 1px solid #a4a9bc ;
     z-index: 10;
-     /* 모바일 환경의 경우 */
-    @media screen and (max-width: 768px) {
-        flex-direction: column;
-    }
 } 
 
 /* Header (logo, Home, Chatbot, ...) */
@@ -28,11 +24,6 @@
   font-size: 1.2em;
   letter-spacing: 0px;
   cursor: pointer;
-     /* 모바일 환경의 경우 */
-  @media screen and (max-width: 768px) {
-    padding : 20px;
-    right: 32px;
-  }
 }
 
 li :active {
@@ -44,16 +35,6 @@ li :active {
   align-items: center;
   padding-top: 1.2rem;
   margin-right: -24px;
-   /* 모바일 환경의 경우 탭이 클릭되면 목차가 보이도록 */
-  @media screen and (max-width: 768px) {
-    background-color : #f5f5f5; 
-    position: fixed;
-    bottom : 0;
-    left: 0;
-    right: 0; 
-    display: flex;
-    margin : 0;
-  }
 }
 
 /* Sign Up + Login */
@@ -83,4 +64,39 @@ li :active {
 }
 li{
   list-style: none;
+}
+
+ /* 모바일 환경의 경우 */
+ @media only screen and (max-width: 768px) {
+  .nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0; 
+    background: #fff;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem calc((100vw - 1000px) / 2);
+    border-bottom: 1px solid #a4a9bc ;
+    z-index: 10;
+    
+  }
+  /* 모바일 환경의 경우 탭이 클릭되면 목차가 보이도록 */
+  .navMenu{
+    background-color : #f5f5f5; 
+    position: fixed;
+    bottom : 0;
+    left: 0;
+    right: 0; 
+    display: flex;
+    margin : 0;
+    padding-bottom: 20px;
+    height: 3rem;
+    font-size: 1rem;
+  }
+  .navLink{
+    padding : 20px;
+    right: 32px;
+  }
 }
