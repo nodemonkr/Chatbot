@@ -1,7 +1,8 @@
 import React,{useState} from 'react'
-import {Nav, NavLink, NavMenu, NavBtn, NavBtnLink} from './NavbarElements';
-import  SignUpModal from '../../modal/signupModal'
-import  SignModal from '../../modal/signModal'
+import SignUpModal from '../../modal/signupModal'
+import SignModal from '../../modal/signModal'
+import styles from './index.module.css'
+import { NavLink } from 'react-router-dom'
 
 const Navbar = () => {
     const [signUpModalOn, setSignUpModalOn] = useState(false);
@@ -10,36 +11,30 @@ const Navbar = () => {
 
     return (
         <>
-      <SignUpModal
-        show={signUpModalOn}
-        onHide={() => setSignUpModalOn(false)}
-      />
-      <SignModal
-        show={signModalOn}
-        onHide={() => setSignModalOn(false)}
-      />
-            <Nav>
-                <NavLink to='/'>
+            <SignUpModal
+                show={signUpModalOn}
+                onHide={() => setSignUpModalOn(false)}
+            />
+            <SignModal
+                show={signModalOn}
+                onHide={() => setSignModalOn(false)}
+            />
+            <div className= {styles.nav}>
+                <div><NavLink className= {styles.navLink} to='/'>
                     <img src='images/himeeting_logo3.png' alt="Himeeting" width="200" height="50" />   
-                </NavLink>
-                
-                <NavMenu menu={menu}>
-                    <NavLink to='/' activeStyle>
-                        Home
-                    </NavLink>
-                    <NavLink to='/Chatbot' activeStyle>
-                        Chatbot
-                    </NavLink>
-                    <NavLink to='/Team' activeStyle>
-                        Team
-                    </NavLink>
-                   
-                   <NavBtn>
-                    <NavBtnLink onClick={() => setSignModalOn(true)} to='/SignUp'>Sign Up </NavBtnLink>    
-                   <NavBtnLink onClick={() => setSignUpModalOn(true)} to='/Login'>Login</NavBtnLink>
-                </NavBtn>
-                </NavMenu>
-            </Nav>
+                    <div className= {styles.navLink}>
+                        <ul className= {styles.navMenu} menu={menu}>
+                            <li><NavLink className= {styles.navLink} to="/" active>Home</NavLink></li>
+                            <li><NavLink className= {styles.navLink} to='/Chatbot' >Chatbot</NavLink></li>
+                            <li><NavLink className= {styles.navLink} to='/Team' >Team</NavLink></li>
+                            <li className= {styles.navBtn}>
+                                <li className= {styles.navBtnLink} onClick={() => setSignModalOn(true)} to='/SignUp'>Sign Up </li>    
+                                <li className= {styles.navBtnLink} onClick={() => setSignUpModalOn(true)} to='/Login'>Login</li>
+                            </li>
+                        </ul>
+                    </div>
+                </NavLink></div>
+            </div>
         </>
     );
 };
