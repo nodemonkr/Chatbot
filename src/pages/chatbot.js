@@ -11,7 +11,6 @@ const Chatbot = (props) => {
     const [today, setToday] = useState("")
     const [message, setMessage] = useState('')
 
-
     const chatBotCall = () => {
           API.post("/chatbot",{question:message}).then(res =>{
             setContents([...contents, { name: 'haibot', message: "message" }])
@@ -37,13 +36,11 @@ const Chatbot = (props) => {
         <div className={styles.chatbot}>
             {/* 왼쪽 챗봇 리스트 */}
             <div className={styles.chatbotLeft}>
-                <div className={classNames({ [styles.chatbotList]: true, [styles.chatbotFont]: true })}>
-                    <ul>
-                        <li><p># 직업별 질문 챗봇</p></li>
-                        <li><p># 기업별 질문 챗봇</p></li>
-                        <li><p># 성격별 질문 챗봇</p></li>
-                    </ul>
-                </div>
+                <ul className={classNames({ [styles.chatbotList]: true, [styles.chatbotFont]: true })}>
+                    <li><p># 직업별 질문 챗봇</p></li>
+                    <li><p># 기업별 질문 챗봇</p></li>
+                    <li><p># 성격별 질문 챗봇</p></li>
+                </ul>
             </div>
             {/* 오른쪽 챗봇 채팅 */}
             <div className={styles.chatbotRight}>
@@ -52,16 +49,15 @@ const Chatbot = (props) => {
                     # 직업별 질문 챗봇
           </div>
                 {/* 대화 내용 */}
-                <div className={styles.chatbotTalk}>
+                <ul className={styles.chatbotTalk}>
                     <div className={styles.center}>
-
                         <span className={styles.talkDay}>{today}</span>
                     </div>
                     {
                         contents.map((item) => {
                             if (item.name == 'haibot') {
                                 {/* 받은 메시지 */ }
-                                return (<div className={styles.getTalk}>
+                                return (<li className={styles.getTalk}>
                                     <span className={styles.chatbotImage}>
                                         <img src='images/임시chaticon.png' width="30" height="30" />
                                     </span>
@@ -75,44 +71,40 @@ const Chatbot = (props) => {
                                             <div><p className={styles.talkTime}>11시 40분</p></div>
                                         </span>
                                     </div>
-                                </div>)
+                                </li>)
                             } else {
                                 {/* 보낸 메시지 */ }
                                 return (
-                                    <div className={styles.sendTalk}>
+                                    <li className={styles.sendTalk}>
                                         <span className={styles.sendTalkAbout}>
                                             <div><p className={styles.talkTime}>11시 40분</p></div>
                                             <div className={classNames({ [styles.sendMsg]: true, [styles.chatbotFont]: true })}>
                                                 <p>{item.message}</p>
                                             </div>
                                         </span>
-                                    </div>)
+                                    </li>)
                             }
                         })
                     }
 
 
-                </div>
+                </ul>
                 {/* 톡 보내기 */}
                 <div className={styles.chatbotSandTalk}>
-                    <div className={styles.inputSandTalk}>
-                        <input
-                            className={styles.formControl}
-                            placeholder="메세지를 입력해주세요"
-                            value={message}
-                            onChange={(e) => {setMessage(e.target.value)}}
-                        // onKeyPress={}
-                        />
-                        <div>
-                            <span
-                                className={styles.inputSendBox}
-                                onClick={()=>{setContents([...contents,{ name: 'user', message: message }])}}
-                                >
-                                send
-                      </span>
-                        </div>
-                    </div>
-
+                    <input
+                        className={styles.formControl}
+                        placeholder="메세지를 입력해주세요"
+                        value={message}
+                        onChange={(e) => {setMessage(e.target.value)}}
+                        
+                    // onKeyPress={}
+                    />
+                        <button
+                            className={styles.inputSendBox}
+                            onClick={()=>{setContents([...contents,{ name: 'user', message: message }])}}
+                            >
+                            send
+                    </button>
                 </div>
             </div>
         </div>
@@ -121,5 +113,4 @@ const Chatbot = (props) => {
 
     )
 }
-
 export default Chatbot
