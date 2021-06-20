@@ -69,6 +69,7 @@ li{
  /* 모바일 환경의 경우 */
  @media only screen and (max-width: 768px) {
   .nav{
+    display: block;
     position: fixed;
     top: 0;
     left: 0;

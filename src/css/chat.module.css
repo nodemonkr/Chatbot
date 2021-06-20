@@ -1,5 +1,5 @@
 .chatbot{
-  margin-top: 60px;
+  margin-top: 20px;
   display:flex;
 }
 /*========== 왼쪽 챗봇 리스트 ==========*/
@@ -17,21 +17,20 @@
 /*========== 오른쪽 챗봇 채팅 ==========*/
 .chatbotRight {
   background-color: rgb(240, 234, 234);
+  height: 100vh;
   flex-grow: 1;
     
 }
 .chatbotName {
-  position: fixed;
   width:100%;
   padding: 20px;
   background: #cad0d8;
   border-bottom: 1px solid #a4a9bc;
-  
 }
 
 /*====== 톡 보내기 ======*/
 .chatbotTalk {
-  margin: 70px 0;
+  margin: 20px 0;
   display:flex;
   flex-direction: column;
 }
@@ -110,13 +109,24 @@
 
 /* ===========  톡 보내기 =========== */
 .chatbotSandTalk{
-  background: #cad0d8;
+  width: 100%;
   border-bottom: 1px solid #a4a9bc;
-  height: 60px;
-  bottom:0;
+  bottom:0px;
   padding: 0;
-  display: flex;
-  position: fixed;
+}
+.talkBox{
+  height: 84vh;
+}
+@media only screen and (max-width: 768px) {
+  .chatbotSandTalk{
+    border-bottom: 1px solid #a4a9bc;
+    bottom:49px;
+    padding: 0;
+    display: flex;
+  }
+  .talkBox{
+    height: 79vh;
+  }
 }
 .formControl {
   flex: 1;
