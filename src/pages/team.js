@@ -1,15 +1,7 @@
-import React from 'react'
-
-import styles from "../css/team.module.css"
-import classNames from 'classnames'
+import React from 'react';
 
 const Team = () => {
-    return (
-        <div>
-            d
-            </div>
+  return <div>dSS</div>;
+};
 
-    )
-}
-
-export default Team
+export default Team;

@@ -1,25 +1,15 @@
-import React from 'react'
-
-
-
+import React from 'react';
+import AuthForm from '../components/auth/AuthForm';
+import AuthTemplate from '../components/auth/AuthTemplate';
 
 const Login = () => {
+  return (
+    <>
+      <AuthTemplate>
+        <AuthForm type='login'></AuthForm>
+      </AuthTemplate>
+    </>
+  );
+};
 
-    return (
-        
-        <div 
-            style={{
-                display:'flex', 
-                justifyContent:'center', 
-                alignItems:'center',
-                height: '90vh'
-            }}
-        >
-            <h1>login</h1>
-        </div>
-       
-    )
-}
-
-
-export default Login
+export default Login;
