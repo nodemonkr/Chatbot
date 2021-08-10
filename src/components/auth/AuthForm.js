@@ -12,7 +12,7 @@ const textMap = {
 };
 // 회원가입, 로그인 폼을 보여줍니다.
 const AuthForm = ({ type }) => {
-  const [data, setDate] = useState(null);
+  const [data, setData] = useState(null);
   const text = textMap[type];
   const [authObj, setAuthObj] = useState({
     user_id: '',
@@ -22,23 +22,56 @@ const AuthForm = ({ type }) => {
   });
 
   const onChange = async (event) => {
+    console.log('onchange');
     const {
       target: { name, value },
     } = event;
     setAuthObj((authObj) => ({ ...authObj, [name]: value }));
   };
   const onSubmit = async (event) => {
-    event.preventDefault();
-    try {
-      console.log('onSubmit');
-      console.log('id : ' + authObj.user_id);
-      console.log('password : ' + authObj.user_pw);
-      console.log('username : ' + authObj.user_name);
-      await axios.post(`/userRegister`, authObj).then((res) => {
-        console.log(res.data);
-      });
-    } catch (e) {
-      alert(e);
+    event.preventDefault(); //submit과 동시에 창이 다시 실행되는 것을 막아줍니다.
+    if (type === 'signUp') {
+      // 회원가입
+      try {
+        console.log(
+          `[회원가입] id: ${authObj.user_id} + password: ${authObj.user_pw} + usename: ${authObj.user_name} userphone: ${authObj.user_phone}`,
+        );
+        await axios
+          .post(`/userRegister`, authObj)
+          // 회원가입 성공
+          .then((res) => {
+            alert('회원가입 성공!');
+            console.log(res.data);
+          })
+          // 회원가입 실패
+          .catch(function (e) {
+            alert('회원가입 실패');
+            console.log(e);
+          });
+      } catch (e) {
+        alert(e);
+      }
+    } else {
+      // 로그인
+      try {
+        console.log(
+          `[로그인] id: ${authObj.user_id} + password: ${authObj.user_pw}`,
+        );
+        await axios
+          .post(`/userLogin`, authObj)
+          // 로그인 응답 성공
+          .then((res) => {
+            setData(res.data);
+            alert(data.username + '님 환영합니다!' + data.userphone);
+          })
+          // 응답 실패
+          .catch(function (e) {
+            alert('아이디, 비밀번호를 확인해주세요.');
+            console.log(e);
+          });
+      } catch (e) {
+        console.log(e);
+      }
     }
   };
 
@@ -98,7 +131,6 @@ const AuthForm = ({ type }) => {
           <Link to='/login'>로그인</Link>
         )}
       </Footer>
-      {data && <textarea rows={7} value={JSON.stringify(data, null, 2)} />}
     </AuthFormBlock>
   );
 };
