@@ -18,7 +18,6 @@ const Team = () => {
     setSearchObj((searchObj) => ({ ...searchObj, [name]: value }));
   };
   const onSubmit = async (event) => {
-    console.log('검색');
     event.preventDefault();
     console.log(searchObj.search_data);
     try {
@@ -33,7 +32,7 @@ const Team = () => {
   return (
     <div>
       <SearchBlock>
-        <h3>검색창</h3>
+        <h3>위키백과</h3>
         <form onSubmit={onSubmit}>
           <input
             name='search_data'
@@ -41,9 +40,7 @@ const Team = () => {
             onChange={onChange}
             value={searchObj.search_data}
           />
-          <Button navy style={{ marginTop: '2rem' }}>
-            검색
-          </Button>
+          <Button navy>검색</Button>
         </form>
         {data && <textarea rows={10} value={JSON.stringify(data, null, 2)} />}
       </SearchBlock>
@@ -51,5 +48,9 @@ const Team = () => {
   );
 };
 
-const SearchBlock = styled.div``;
+const SearchBlock = styled.div`
+  /* width: 20rem;
+  height: 20rem;
+  background-color: #cdcdcd; */
+`;
 export default Team;
