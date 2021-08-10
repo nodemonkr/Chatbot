@@ -12,7 +12,6 @@ const textMap = {
 };
 // 회원가입, 로그인 폼을 보여줍니다.
 const AuthForm = ({ type }) => {
-  const [data, setData] = useState(null);
   const text = textMap[type];
   const [authObj, setAuthObj] = useState({
     user_id: '',
@@ -22,7 +21,6 @@ const AuthForm = ({ type }) => {
   });
 
   const onChange = async (event) => {
-    console.log('onchange');
     const {
       target: { name, value },
     } = event;
@@ -54,15 +52,16 @@ const AuthForm = ({ type }) => {
     } else {
       // 로그인
       try {
-        console.log(
-          `[로그인] id: ${authObj.user_id} + password: ${authObj.user_pw}`,
-        );
         await axios
           .post(`/userLogin`, authObj)
           // 로그인 응답 성공
           .then((res) => {
-            setData(res.data);
-            alert(data.username + '님 환영합니다!' + data.userphone);
+            // setData(res.data);
+            console.log(
+              `[로그인] id: ${authObj.user_id} , password: ${authObj.user_pw}`,
+            );
+            console.log(res.data.username);
+            alert(res.data.username + '님 환영합니다!' + res.data.userphone);
           })
           // 응답 실패
           .catch(function (e) {
