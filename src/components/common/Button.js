@@ -13,9 +13,9 @@ const buttonStyle = css`
   outline: none;
   cursor: pointer;
 
-  background: ${palette.gray[3]};
+  background: ${palette.navy[0]};
   &:hover {
-    background: ${palette.gray[4]};
+    background: ${palette.navy[1]};
   }
 
   ${(props) =>
@@ -30,7 +30,7 @@ const buttonStyle = css`
   ${(props) =>
     props.navy &&
     css`
-      background: ${palette.navy[0]};
+      background: ${palette.navy[1]};
       &:hover {
         background: ${palette.navy[2]};
       }

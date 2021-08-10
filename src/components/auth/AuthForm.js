@@ -76,7 +76,7 @@ const AuthForm = ({ type }) => {
 
   return (
     <AuthFormBlock>
-      <h3>{text} </h3>
+      <AuthFormName>{text} </AuthFormName>
       <form onSubmit={onSubmit}>
         <StyledInput
           autoComplete='id'
@@ -125,9 +125,15 @@ const AuthForm = ({ type }) => {
       </form>
       <Footer>
         {type === 'login' ? (
-          <Link to='/signUp'>회원가입</Link>
+          <GotoLink>
+            <p>이미 하이미팅 회원이신가요?</p>
+            <Link to='/signUp'>회원가입</Link>
+          </GotoLink>
         ) : (
-          <Link to='/login'>로그인</Link>
+          <GotoLink>
+            <p>아직 하이미팅 회원이 아니신가요?</p>{' '}
+            <Link to='/login'>로그인</Link>
+          </GotoLink>
         )}
       </Footer>
     </AuthFormBlock>
@@ -135,23 +141,28 @@ const AuthForm = ({ type }) => {
 };
 const AuthFormBlock = styled.div`
   padding: 2rem;
-  h3 {
-    margin: 0;
-    color: ${palette.black[0]};
-    margin-bottom: 1rem;
-  }
+`;
+const AuthFormName = styled.div`
+  color: ${palette.navy[2]};
+  // border: 1px solid red;
+  display: flex;
+  justify-content: center;
+  margin: 1rem auto 3rem;
+  font-size: 2rem;
 `;
 
 const StyledInput = styled.input`
   font-size: 1rem;
+  padding: 0.5rem;
   border: none;
-  border-bottom: 1px solid ${palette.gray[3]};
+  border: 1px solid ${palette.navy[0]};
   padding-bottom: 0.5rem;
   outline: none;
   width: 100%;
+
   &:focus {
     color: ${palette.black[0]};
-    border-bottom: 1px solid ${palette.navy[3]};
+    border: 1px solid ${palette.navy[1]};
   }
   & + & {
     margin-top: 1rem;
@@ -165,11 +176,20 @@ const ButtonWithMarginTop = styled(Button)`
 const Footer = styled.div`
   margin-top: 2rem;
   text-align: right;
+`;
+
+const GotoLink = styled.div`
+  display: flex;
+  float: right;
+  p {
+    margin-right: 1rem;
+    color: ${palette.black[0]};
+  }
   a {
-    color: ${palette.gray[3]};
+    color: ${palette.navy[1]};
     text-decoration: underline;
     &:hover {
-      color: #a4a9bc;
+      color: ${palette.navy[2]};
     }
   }
 `;
