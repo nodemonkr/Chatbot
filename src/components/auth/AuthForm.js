@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import Button from '../common/Button';
 import palette from '../../lib/styles/palette';
 import { useState } from 'react';
+import axios from 'axios';
 
 const textMap = {
   login: '로그인',
@@ -11,12 +12,13 @@ const textMap = {
 };
 // 회원가입, 로그인 폼을 보여줍니다.
 const AuthForm = ({ type }) => {
+  const [data, setDate] = useState(null);
   const text = textMap[type];
   const [authObj, setAuthObj] = useState({
-    id: '',
-    password: '',
-    passwordConfirm: '',
-    username: '',
+    user_id: '',
+    user_pw: '',
+    user_name: '',
+    user_phone: '',
   });
 
   const onChange = async (event) => {
@@ -29,14 +31,16 @@ const AuthForm = ({ type }) => {
     event.preventDefault();
     try {
       console.log('onSubmit');
+      console.log('id : ' + authObj.user_id);
+      console.log('password : ' + authObj.user_pw);
+      console.log('username : ' + authObj.user_name);
+      await axios.post(`/userRegister`, authObj).then((res) => {
+        console.log(res.data);
+      });
     } catch (e) {
-      console.error(e);
+      alert(e);
     }
   };
-  // const [id, setId] = React.useState('');
-  // const [password, setPassword] = React.useState('');
-  // const [passwordConfirm, setPasswordConfirm] = React.useState('');
-  // const [username, setUsername] = React.useState('');
 
   return (
     <AuthFormBlock>
@@ -44,19 +48,19 @@ const AuthForm = ({ type }) => {
       <form onSubmit={onSubmit}>
         <StyledInput
           autoComplete='id'
-          name='id'
+          name='user_id'
           placeholder='아이디'
           onChange={onChange}
-          value={authObj.id}
+          value={authObj.user_id}
         />
 
         <StyledInput
           autoComplete='new-password'
-          name='password'
+          name='user_pw'
           placeholder='비밀번호'
           type='password'
           onChange={onChange}
-          value={authObj.password}
+          value={authObj.user_pw}
         />
         {type === 'signUp' && (
           <>
@@ -66,21 +70,26 @@ const AuthForm = ({ type }) => {
               placeholder='비밀번호 확인'
               type='password'
               onChange={onChange}
-              value={authObj.passwordConfirm}
             />
             <StyledInput
               autoComplete='username'
-              name='username'
+              name='user_name'
               placeholder='이름'
               onChange={onChange}
-              value={authObj.username}
+              value={authObj.user_name}
+            />
+            <StyledInput
+              autoComplete='userphone'
+              name='user_phone'
+              placeholder='휴대폰 번호'
+              onChange={onChange}
+              value={authObj.user_phone}
             />
           </>
         )}
         <ButtonWithMarginTop navy fullWidth style={{ marginTop: '2rem' }}>
           {text}
         </ButtonWithMarginTop>
-        <input type='submit' value={text} />
       </form>
       <Footer>
         {type === 'login' ? (
@@ -89,6 +98,7 @@ const AuthForm = ({ type }) => {
           <Link to='/login'>로그인</Link>
         )}
       </Footer>
+      {data && <textarea rows={7} value={JSON.stringify(data, null, 2)} />}
     </AuthFormBlock>
   );
 };
